@@ -1,9 +1,9 @@
 # AdoptApp
 Mobile app to help potential parents find adoptable children.
 
-Date Started: 2/13/2021 \n
-Date Finished: 3/5/2021 \n
-Class: Advanced Technologies \n
+Date Started: 2/13/2021 
+Date Finished: 3/5/2021 <br>
+Class: Advanced Technologies 
 School: Southeast Technical College
 
 This mobile app was created as a solo project for a class in my final semester of college. While I do plan to continue working with it, all future changes will be on a separate repository. 
