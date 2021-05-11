@@ -1,4 +1,4 @@
-# ProjectFamily
+# Project Family
 Mobile app to help potential parents find adoptable children.
 
 Date Started: 2/13/2021 <br>
