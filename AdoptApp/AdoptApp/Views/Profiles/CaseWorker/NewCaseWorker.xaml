@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdoptApp.Views.NewCaseWorker"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="LatoLight"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontSize" Value="22"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"  BackgroundColor="#FFFCF2">
+            <Frame BackgroundColor="{StaticResource Primary}" HeightRequest="22" Margin="0,-10,0,-6" HasShadow="True" >
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton Source="back.png" Clicked="BackButton_Clicked" Padding="-6,1,10,2" BackgroundColor="{StaticResource Primary}" HorizontalOptions="Start"/>
+                    <Label Text="Create Account" FontFamily="LatoReg" FontSize="22" Padding="-8,-3,0,0" TextColor="#43663e" VerticalOptions="FillAndExpand"/>
+                </StackLayout>
+            </Frame>
+            <ScrollView>
+                <StackLayout VerticalOptions="FillAndExpand" >
+
+                    <Frame BackgroundColor="#81c975" Padding="7">
+                        <Label Text="*The selected account is meant for case managers. If this is a mistake, please go back and select the other option.*" HorizontalTextAlignment="Center" FontSize="16"/>
+                    </Frame>
+                    <Label Text="Welcome to Project Family" FontSize="30" HorizontalOptions="Center" Margin="0,40,0,0"/>
+                    <Label Text="Please enter your information below" FontSize="20" HorizontalOptions="Center" Margin="0,10,0,20"/>
+
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout>
+                            <Label Text="Create Login" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+
+                            <Entry Text="{Binding caseWorker.WorkerId}" Margin="0" FontSize="1" IsVisible="false" HorizontalOptions="FillAndExpand"/>
+                            
+                            <Label Text="Username:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.UserName}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Password:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.Password}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Email:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.Email}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <Label Text="License Information" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+
+                            
+                            <Label Text="Full Name:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.Name}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="License #:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.CaseWorkerId}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Agency/Employer:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.Agency}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="City:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.City}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="State:" Margin="2"/>
+                            <Entry Text="{Binding caseWorker.State}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="*For the safety of our users and the children listed with us, Project Family may varify any licensing information entered.*" HorizontalTextAlignment="Center" FontSize="16" TextColor="IndianRed"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="{Binding lblInfo}" Margin="15,10,15,0"/>
+                    <StackLayout Orientation="Horizontal" Margin="15,-35,15,30">
+                        <Button Text="Create Account" x:Name="btnSave" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource Primary}" TextColor="White" Command="{Binding btnSaveWorker}" Clicked="CreateWorker"/>
+                        <Button Text="Clear" x:Name="btnClear" HorizontalOptions="FillAndExpand" BackgroundColor="#bfbfbf" TextColor="White" Command="{Binding btnClearWorker}"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

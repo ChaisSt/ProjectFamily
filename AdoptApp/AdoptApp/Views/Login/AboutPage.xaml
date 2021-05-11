@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdoptApp.Views.AboutPage"
+             xmlns:vm="clr-namespace:AdoptApp.ViewModels"
+             Title="About Page"
+             IconImageSource="leaf3.png"
+             BackgroundImageSource="treebg.jpg">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="LatoLight"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontSize" Value="22"/>
+            </Style>
+            <Color x:Key="Accent">#FFFCF2</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="{StaticResource Primary}" HeightRequest="16" Margin="0,-10,0,-6" HasShadow="True" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="About" FontFamily="LatoReg" FontSize="22" Padding="-6,0,0,0" Margin="0,0,0,-8" TextColor="WhiteSmoke" VerticalOptions="FillAndExpand"/>
+                    <ImageButton Source="logOut.png" Clicked="ImageButton_Clicked" HorizontalOptions="EndAndExpand" BackgroundColor="{StaticResource Primary}" Padding="0,0,0,-5" VerticalOptions="CenterAndExpand" Scale="1.5"  Aspect="AspectFit"/>
+                </StackLayout>
+            </Frame>
+            <StackLayout BackgroundColor="White" Margin="20,35" >
+            <Frame HasShadow="True" BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,30,0,30" VerticalOptions="FillAndExpand">
+                        <Image Source="logo.png" VerticalOptions="Center" HeightRequest="64" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" Scale="4" />
+                    </ContentView>
+                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Vertical" Padding="30,14,30,24" Spacing="10">
+                <Label Text="Start your search now" FontSize="26"/>
+                <Label Text="Children from all across the United States are waiting for parents just like you to find them, Project Family is here to help." Padding="0,10,0,0"/>
+                <Label Padding="0,20,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Learn more about adoption at " FontSize="18"/>
+                                <Span Text="https://www.adoptuskids.org" FontSize="18" FontAttributes="Bold"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Margin="0,10,0,0" Text="Learn more"
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+
+            </StackLayout>
+        </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

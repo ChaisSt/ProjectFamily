@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ctrl="clr-namespace:AdoptApp.Views"
+             x:Class="AdoptApp.Views.SignUp"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="RadioButton">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="LatoLight"/>
+                <Setter Property="Margin" Value="12,0,0,0"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="LatoLight"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout  BackgroundColor="#FFFCF2">
+            <Frame BackgroundColor="{StaticResource Primary}" HeightRequest="22" HasShadow="True" >
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton Source="back.png" Clicked="BackButton_Clicked" Padding="-6,1,10,2" BackgroundColor="{StaticResource Primary}" HorizontalOptions="Start"/>
+                    <Label Text="Login" FontFamily="LatoReg" FontSize="22" Padding="-8,-3,0,0" TextColor="#43663e" VerticalOptions="FillAndExpand"/>
+                </StackLayout>
+              </Frame>
+            <Frame BackgroundColor="White" HorizontalOptions="CenterAndExpand" Margin="30,30,30,-27" HeightRequest="210" >
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="15" >
+                <Label Text="Account Purpose" HorizontalOptions="Center" FontSize="36" Margin="0,15" />
+                <RadioButton GroupName="AType" Content="View adoptable children" x:Name="family" CheckedChanged="HandleChecked" Margin="12,5,0,0"/>
+                    <RadioButton GroupName="AType" Content="Post adoptable children" x:Name="worker" CheckedChanged="HandleChecked" Margin="12,0,0,40"/>
+                </StackLayout>
+            </Frame>
+            <Button Text="Create Account" Clicked="CreateAccount_Clicked" FontSize="22"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

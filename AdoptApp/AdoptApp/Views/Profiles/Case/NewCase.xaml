@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdoptApp.Views.NewCase"
+             Title="New Case"  IconImageSource="new3.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="LatoLight"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontSize" Value="22"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"  BackgroundColor="#FFFCF2">
+            <Frame BackgroundColor="{StaticResource Primary}" HeightRequest="16" Margin="0,-10,0,-6" HasShadow="True" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="New Case" FontFamily="LatoReg" FontSize="22" Padding="-6,0,0,0" Margin="0,0,0,-8" TextColor="WhiteSmoke" VerticalOptions="FillAndExpand"/>
+                    <ImageButton Source="logOut.png" Clicked="ImageButton_Clicked" HorizontalOptions="EndAndExpand" BackgroundColor="{StaticResource Primary}" Padding="0,0,0,-5" VerticalOptions="CenterAndExpand" Scale="1.5"  Aspect="AspectFit"/>
+                </StackLayout>
+            </Frame>
+            <ScrollView>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Label Text="Every child deserves a home" FontSize="30" HorizontalOptions="Center" Margin="0,40,0,0"/>
+                    <Label Text="Please provide the most detail possible to increase the chances of being noticed" FontSize="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="15,10,15,20"/>
+
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout>
+                            <Label Text="Case Information" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+
+                            <Entry Text="{Binding child.CaseId}" Margin="0" FontSize="1" IsVisible="false" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="Case #:" Margin="2"/>
+                            <Entry Text="{Binding child.CaseNum}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="*For the safety of the families and children listed with us, Project Family may varify any licensing information entered*" HorizontalTextAlignment="Center" TextColor="IndianRed" FontSize="16"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <Label Text="Profile Information" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+                            <!--<Label Text="*If the child contains more than one child, separate each value by a comma and try to keep values in the same order." Margin="2, -5, 2, 6" FontSize="16" HorizontalTextAlignment="Center" TextColor="Gray"/>-->
+
+                            <Label Text="Number of Children:" Margin="2"/>
+                            <Entry Text="{Binding child.Group}" Placeholder="Ex. 4" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+                        
+                            <Label Text="Child Name(s):" Margin="2"/>
+                            <Entry Text="{Binding child.Name}" Placeholder="Ex. Jacob, Emma, Steven, Taylor" Margin="2,2,2,5"  HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Age(s):" Margin="2"/>
+                            <Entry Text="{Binding child.Age}" Placeholder="Ex. 8, 6, 4, 2" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Gender(s):" Margin="2"/>
+                            <Entry Text="{Binding child.Gender}" Placeholder="Ex. 2 Male, 2 Female" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="State:" Margin="2"/>
+                            <Entry Text="{Binding child.State}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Race(s):" Margin="2"/>
+                            <Entry Text="{Binding child.Race}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Known Language(s):" Margin="2"/>
+                            <Entry Text="{Binding child.Language}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+                            
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Profile Image: " Margin="2"/>
+                                <Button Text="Pick Photo" Clicked="OnPickPhotoButtonClicked" WidthRequest="210" HorizontalOptions="EndAndExpand" Margin="0,-10,0,0" />
+                                <!--<Entry Text="{BindingSource={x:Reference strFileName}, Path=Value}"/>-->
+                                
+                            </StackLayout>
+                            <Label Text="*Please upload an image in which all child children are front-facing and together*" Margin="2, -5, 2, 6" FontSize="16" HorizontalTextAlignment="Center" TextColor="Gray"/>
+                        </StackLayout> 
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <Label Text="Additional" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+                            <Label Text="Case Description:" Margin="2"/>
+                            <Editor Text="{Binding child.Description}" Placeholder="Ex. Fun loving, active group of siblings with an unbreakable bond" Margin="2,0,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="List interests/hobbies:" Margin="2"/>
+                            <Editor Text="{Binding child.Interests}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Bio, tell potential families about the child:" Margin="2"/>
+                            <Editor Text="{Binding child.Bio}" FontSize="17" TextColor="Gray" Margin="2,2,2,0" BackgroundColor="WhiteSmoke" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="*Tell families about what makes this case unique. Personalities, special needs, ideal family, etc.*" Margin="2, -5, 2, 6" FontSize="16" HorizontalTextAlignment="Center" TextColor="Gray"/>
+
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="{Binding lblInfo}" Margin="15,10,30,0"/>
+                    <StackLayout Orientation="Horizontal" Margin="15,0,15,30">
+                        <Button Text="Add Case" x:Name="btnSave" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource Primary}" TextColor="White" Command="{Binding btnSaveCase}" Clicked="CreateCase"/>
+                        <Button Text="Clear" x:Name="btnClear" HorizontalOptions="FillAndExpand" BackgroundColor="#bfbfbf" TextColor="White" Command="{Binding btnClearCase}"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

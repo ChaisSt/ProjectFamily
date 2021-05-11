@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdoptApp.Views.NewFamily"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="LatoLight"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontSize" Value="22"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"  BackgroundColor="#FFFCF2">
+        <Frame BackgroundColor="{StaticResource Primary}" HeightRequest="22" Margin="0,-10,0,-6" HasShadow="True" >
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="back.png" Clicked="BackButton_Clicked" Padding="-6,1,10,2" BackgroundColor="{StaticResource Primary}" HorizontalOptions="Start"/>
+                <Label Text="Create Account" FontFamily="LatoReg" FontSize="22" Padding="-8,-3,0,0" TextColor="#43663e" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Frame>
+            <ScrollView>
+                <StackLayout VerticalOptions="FillAndExpand" >
+                    <Frame BackgroundColor="#81c975" Padding="7">
+                        <Label Text="*The selected account is meant for families ready to adopt. If this is a mistake, please go back and select the other option.*" HorizontalTextAlignment="Center" FontSize="16"/>
+                    </Frame>
+                    <Label Text="Welcome to Project Family" FontSize="30" HorizontalOptions="Center" Margin="0,40,0,0"/>
+                    <Label Text="Please enter your information below" FontSize="20" HorizontalOptions="Center" Margin="0,10,0,20"/>
+
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout>
+                            <Label Text="Create Login" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+
+                            <Label Text="Username:" Margin="2"/>
+                            <Entry Text="{Binding family.UserName}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Password:" Margin="2"/>
+                            <Entry Text="{Binding family.Password}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Email:" Margin="2"/>
+                            <Entry Text="{Binding family.Email}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <Label Text="License Information" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+
+                            <Entry Text="{Binding family.FamilyId}" Margin="0" FontSize="1" IsVisible="false" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="License:" Margin="2"/>
+                            <Entry Text="{Binding family.License}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Agency:" Margin="2"/>
+                            <Entry Text="{Binding family.Agency}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="*For the safety of the children listed with us, Project Family may varify any licensing information entered.*" HorizontalTextAlignment="Center" FontSize="16" TextColor="IndianRed"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <Label Text="Account Details" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Profile Image: " Margin="2"/>
+                                <Button Text="Pick Photo" Clicked="OnPickPhotoButtonClicked" WidthRequest="210" HorizontalOptions="EndAndExpand" Margin="0,-10,0,0" />
+                            </StackLayout>
+
+                            <Label Text="Full Names:" Margin="2"/>
+                            <Entry Text="{Binding family.Name}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Occupation(s):" Margin="2"/>
+                            <Entry Text="{Binding family.Occupation}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Fluent Language(s):" Margin="2"/>
+                            <Entry Text="{Binding family.Language}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Preferred Phone #:" Margin="2"/>
+                            <Entry Text="{Binding family.Phone}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="City:" Margin="2"/>
+                            <Entry Text="{Binding family.City}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="State:" Margin="2"/>
+                            <Entry Text="{Binding family.State}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="Existing Children:" Margin="2"/>
+                            <Picker x:Name="Children" SelectedIndex="{Binding family.Children}" HorizontalOptions="FillAndExpand">
+                                <Picker.Items>
+                                    <x:String>None</x:String>
+                                    <x:String>1</x:String>
+                                    <x:String>2</x:String>
+                                    <x:String>3</x:String>
+                                    <x:String>4</x:String>
+                                    <x:String>5+</x:String>
+                                </Picker.Items>
+                            </Picker>
+
+                            <Label Text="Pet(s):" Margin="2"/>
+                            <Entry Text="{Binding family.Pets}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand" Keyboard="Numeric"/>
+
+                        </StackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="15,10,15,0">
+                        <StackLayout VerticalOptions="FillAndExpand">
+                            <Label Text="Additional Info" FontSize="26" Margin="2" Padding="0,0,0,10"/>
+                            <Label Text="Profile tagline:" Margin="2"/>
+                            <Entry Text="{Binding family.Description}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="List interests/hobbies:" Margin="2"/>
+                            <Entry Text="{Binding family.Interests}" Margin="2,2,2,5" HorizontalOptions="FillAndExpand"/>
+                           
+                            <Label Text="About the family:" Margin="2"/>
+                            <Editor Text="{Binding family.Bio}" FontSize="17" TextColor="Gray" Margin="2,2,2,0" BackgroundColor="WhiteSmoke" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="*Use this to talk about your family. What is your family like? What are your values? Why are you interested in adopting?*" Margin="2, -5, 2, 6" FontSize="16" TextColor="Gray"/>
+
+                             <!--<Picker x:Name="Interests" SelectedIndex="{Binding family.Interests}" HorizontalOptions="FillAndExpand" SelectedIndexChanged="AddInterest">
+                                <Picker.Items>
+                                    <x:String></x:String>
+                                    <x:String>1</x:String>
+                                    <x:String>2</x:String>
+                                    <x:String>3</x:String>
+                                    <x:String>4</x:String>
+                                    <x:String>5+</x:String>
+                                </Picker.Items>
+                            </Picker>-->
+                             </StackLayout>
+                    </Frame>
+                    <Label Text="{Binding lblInfo}" Margin="15,10,15,0"/>
+                    <StackLayout Orientation="Horizontal" Margin="15,-30,15,30">
+                        <Button Text="Next Page" x:Name="btnSave" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource Primary}" TextColor="White" Command="{Binding btnSaveFamily}" Clicked="CreateFamily"/>
+                        <Button Text="Clear" x:Name="btnClear" HorizontalOptions="FillAndExpand" BackgroundColor="#bfbfbf" TextColor="White" Command="{Binding btnClearFamily}"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+</ContentPage.Content>
+</ContentPage>

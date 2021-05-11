@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="AdoptApp.Views.CaseProfile">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="35" >
+                <StackLayout Spacing="-210">
+                    <StackLayout Spacing="-35">
+                        <Image Source="kidsP.jpg" Aspect="AspectFill" VerticalOptions="Start"/>
+                        <Image Source="curvemask.png" VerticalOptions="End" Aspect="AspectFill" Margin="-6, 0,-6,-1"/>
+                    </StackLayout>
+                    <controls:CircleImage Source="teenGirl.jpg" WidthRequest="180" HeightRequest="180" Aspect="AspectFill" VerticalOptions="Start"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Spacing="10" Padding="20,5,30,24">
+                    <Label Text="Brief description of case." TextColor="Gray" Padding="20,-4,20,0" FontSize="18" FontFamily="LatoLightItal" HorizontalTextAlignment="Center"/>
+
+                    <Label Text="About Me" FontSize="26"  FontFamily="LatoBold" />
+                    <Label Text="Number of Children: 1"/>
+                    <Label Text="Name(s): Regan"/>
+                    <Label Text="Age: 13" />
+                    <Label Text="Gender: Female"/>
+                    <Label Text="Location: Colorado" />
+                    <Label Text="Race: Mixed"/>
+                    <Label Text="Language(s): English"/>
+
+                    <Label Text="Bio: " FontSize="20" FontFamily="LatoBold" Padding="0, 10, 0, -2"/>
+                    <Frame BackgroundColor="LightGray" Padding="0, 0, 1, 2">
+                        <Label Text="Some info about the case." BackgroundColor="WhiteSmoke" Padding="10" HeightRequest="100"/>
+                    </Frame>
+                    <Label Text="Interests: " FontSize="20" FontFamily="LatoBold" Padding="0, 10, 0, -2"/>
+                    <Frame BackgroundColor="LightGray" Padding="0, 0, 1, 2">
+                        <Label Text="Bulleted list of interests" BackgroundColor="WhiteSmoke" Padding="10" HeightRequest="100"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage> 

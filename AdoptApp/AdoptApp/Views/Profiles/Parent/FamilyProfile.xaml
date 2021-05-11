@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrl="clr-namespace:AdoptApp.Views;assembly=AdoptApp"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="AdoptApp.Views.FamilyProfile"
+             Title="Profile" IconImageSource="user3.png">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="{StaticResource Primary}" HeightRequest="16" Margin="0,-10,0,-6" HasShadow="True" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Profile" FontFamily="LatoReg" FontSize="22" Padding="-6,0,0,0" Margin="0,0,0,-8" TextColor="WhiteSmoke" VerticalOptions="FillAndExpand"/>
+                    <ImageButton Source="logOut.png" Clicked="ImageButton_Clicked" HorizontalOptions="EndAndExpand" BackgroundColor="{StaticResource Primary}" Padding="0,0,0,-5" VerticalOptions="CenterAndExpand" Scale="1.5"  Aspect="AspectFit"/>
+                </StackLayout>
+            </Frame>
+        <ScrollView>
+            <StackLayout Spacing="35" >
+                <StackLayout Spacing="-210">
+                    <StackLayout Spacing="-35">
+                        <Image Source="trunks3.jpg" Aspect="AspectFill" VerticalOptions="Start"/>
+                        <Image Source="curvemask.png" VerticalOptions="End" Aspect="AspectFill" Margin="-6, 0,-6,-1"/>
+                    </StackLayout>
+                    <controls:CircleImage Source="couple.jpg" WidthRequest="180" HeightRequest="180" Aspect="AspectFill" VerticalOptions="Start"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Spacing="10" Padding="20,5,30,24">
+                    <Label Text="&quot;All that we love deeply becomes a part of us.&quot; — Helen Keller" TextColor="Gray" Padding="20,-5,20,0" FontSize="18" FontFamily="LatoLightItal" HorizontalTextAlignment="Center"/>
+
+                    <Label Text="About Us" FontSize="26"  FontFamily="LatoBold" />
+                    <Label Text="Parent(s): Jeff, 34 &amp; Rebecca, 32"/>
+                    <Label Text="Location: Cleveland, Ohio" />
+                    <Label Text="Occupation: Accountant, Nurse" />
+                    <Label Text="Existing Children? No" />
+                    <Label Text="Pets? Yes"/>
+
+                    <Label Text="Bio: " FontSize="20" FontFamily="LatoBold" Padding="0, 10, 0, -2"/>
+                    <Frame BackgroundColor="LightGray" Padding="0, 0, 1, 2">
+                        <Label Text="Some info about the family." BackgroundColor="WhiteSmoke" Padding="10" HeightRequest="100"/>
+                    </Frame>
+                    <Label Text="Interests: " FontSize="20" FontFamily="LatoBold" Padding="0, 10, 0, -2"/>
+                    <Frame BackgroundColor="LightGray" Padding="0, 0, 1, 2">
+                        <Label Text="Bulleted list of interests" BackgroundColor="WhiteSmoke" Padding="10" HeightRequest="100"/>
+                    </Frame>
+
+                    <Label Text="About the Home" FontSize="26" FontFamily="LatoBold" Padding="0, 15, 0, 0"/>
+                    <Label Text="Housing Type: Multilevel House"/>
+                    <Label Text="Owned? Yes"/>
+                    <Label Text="Bedrooms: 3"/>
+                    <Label Text="Yard? Yes, Fenced"/>
+                    <Label Text="Additional Home Info: " FontSize="20" FontFamily="LatoBold" Padding="0, 10, 0, -2"/>
+                    <Frame BackgroundColor="LightGray" Padding="0, 0, 1, 2">
+                        <Label Text="Chance for family to talk about the home or neighborhood." BackgroundColor="WhiteSmoke" Padding="10" HeightRequest="100"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>  

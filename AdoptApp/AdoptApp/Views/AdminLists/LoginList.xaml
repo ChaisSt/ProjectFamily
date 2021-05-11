@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdoptApp.Views.LoginList">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontFamily" Value="LatoReg"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="lstLogins" ItemsSource="{Binding lstLogins}" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" Margin="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                <Label Text="{Binding LoginId}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent"/>
+                                <Label Text="{Binding UserName}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent"/>
+                                <Label Text="{Binding Password}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent"/>
+                                <Label Text="{Binding AcctType}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="{Binding lblInfo}" Grid.Row="1" Grid.Column="0" Margin="2"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
